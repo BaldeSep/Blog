@@ -70,10 +70,13 @@ ul {
   grid-template-rows: auto 1fr;
 }
 
+// Header and Purpose Padding
+$header-purpose-padding: 20px;
+
 // Header and Nav
 #header {
   background: url("../images/mobile-top-bg.jpg") center center no-repeat / cover;
-  padding: 20px;
+  padding: $header-purpose-padding;
   height: 50%;
   & > * {
     position: relative;
@@ -127,6 +130,37 @@ ul {
 
 // Purpose style
 #purpose {
+  background: url("../images/mobile-bottom-bg.jpg") center center no-repeat /
+    cover;
   height: 50%;
+  padding: $header-purpose-padding;
   @include dark-overlay;
+  & > * {
+    position: relative;
+    z-index: 200;
+  }
+  .container {
+    grid-template-rows: 2fr 5fr 8fr;
+    align-items: center;
+  }
+  h1 {
+    justify-self: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    grid-column: 1/-1;
+    grid-row: span 1;
+  }
+  p {
+    justify-self: center;
+    font-size: 1rem;
+    grid-column: 2 / span 2;
+    grid-row: span 1;
+  }
+  img {
+    justify-self: center;
+    align-self: flex-start;
+    grid-column: 2 / span 2;
+    grid-row: span 1;
+  }
 }
